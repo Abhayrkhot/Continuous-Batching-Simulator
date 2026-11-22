@@ -97,7 +97,10 @@ def nnls(a: NDArray[np.float64], b: NDArray[np.float64], tol: float = 1e-12) -> 
     scale[scale == 0] = 1.0
     a = a / scale
     passive = np.zeros(n, dtype=bool)
-    x = np.zeros(n)
+    # Explicit annotations keep mypy happy across numpy versions whose stubs infer
+    # different shape types for np.zeros versus arithmetic results.
+    x: NDArray[np.float64] = np.zeros(n)
+    z: NDArray[np.float64]
     w = a.T @ (b - a @ x)
     for _ in range(30 * n):
         if passive.all() or w[~passive].max() <= tol:
@@ -118,7 +121,8 @@ def nnls(a: NDArray[np.float64], b: NDArray[np.float64], tol: float = 1e-12) -> 
                 break
         x = z
         w = a.T @ (b - a @ x)
-    return x / scale
+    coef: NDArray[np.float64] = x / scale
+    return coef
 
 
 @dataclass(frozen=True)
@@ -176,7 +180,7 @@ def fit_linear(
     knots = tuple(k for k in (knots if knots is not None else DEFAULT_KNOTS) if k < max_t)
     x = np.array([LinearStepModel.features(s, knots, capture_sizes) for s in stats])
     names = LinearStepModel.feature_names(knots)
-    keep = np.ones(len(y), dtype=bool)
+    keep: NDArray[np.bool_] = np.ones(len(y), dtype=bool)
 
     def solve(mask: NDArray[np.bool_]) -> NDArray[np.float64]:
         w = 1.0 / y[mask]
