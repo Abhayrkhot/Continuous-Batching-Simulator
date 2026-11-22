@@ -1,0 +1,57 @@
+[
+  {
+    "name": "calibration",
+    "requests": 993,
+    "seconds": 346.17823710548026
+  },
+  {
+    "name": "conv_r1",
+    "requests": 240,
+    "seconds": 239.0
+  },
+  {
+    "name": "conv_r2",
+    "requests": 300,
+    "seconds": 149.5
+  },
+  {
+    "name": "conv_r3",
+    "requests": 360,
+    "seconds": 119.66666666666669
+  },
+  {
+    "name": "conv_r4",
+    "requests": 480,
+    "seconds": 119.75
+  },
+  {
+    "name": "conv_r5",
+    "requests": 600,
+    "seconds": 119.8
+  },
+  {
+    "name": "conv_r6",
+    "requests": 720,
+    "seconds": 119.83333333333333
+  },
+  {
+    "name": "code_r0.5",
+    "requests": 120,
+    "seconds": 238.0
+  },
+  {
+    "name": "code_r1",
+    "requests": 240,
+    "seconds": 239.0
+  },
+  {
+    "name": "code_r1.5",
+    "requests": 300,
+    "seconds": 199.33333333333331
+  },
+  {
+    "name": "code_r2",
+    "requests": 300,
+    "seconds": 149.5
+  }
+]
