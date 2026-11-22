@@ -1,0 +1,2 @@
+{"profile": "qwen7b", "config": "b2048", "model": "Qwen/Qwen2.5-7B-Instruct", "vllm_args": "--max-num-batched-tokens 2048 --max-num-seqs 256",
+ "job": "12059951", "node": "d4054", "sif": "/scratch/$USER/icp/vllm.sif"}

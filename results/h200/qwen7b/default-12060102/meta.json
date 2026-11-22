@@ -1,0 +1,2 @@
+{"profile": "qwen7b", "config": "default", "model": "Qwen/Qwen2.5-7B-Instruct", "vllm_args": "",
+ "job": "12060102", "node": "d4054", "sif": "/scratch/$USER/icp/vllm.sif"}
